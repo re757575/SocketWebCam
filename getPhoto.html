@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+  <title>Web Apprentice - Live Demos</title>
+    <script type="text/javascript">
+    var nodejs_server = "window.location.href";
+    var socket = io.connect();
+    socket.on("show_Img", function(data) {
+        var showimg = document.getElementById('img');
+        showimg.style.display = 'block';
+        showimg.src = data;
+    });
+    </script>  
+</head>
+<body>
+<img id="img" src=""></img>
+</body>
+</html>
